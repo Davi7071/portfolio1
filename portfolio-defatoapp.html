@@ -39,6 +39,13 @@
       <a target="_blank" href="https://github.com/Davi7071" class="github"><i class="bi bi-github"></i></a>
       <a target="_blank" href="https://www.linkedin.com/in/davi-falabella-oliveira-89b4442b9/" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
+    <ul style="list-style:none; padding:0; margin-top:10px;">
+      <li>
+        <button id="lang-switch" class="btn btn-sm btn-outline-light">
+          <i class="bi bi-translate"></i> <span data-i18n="lang-switch">PT/EN</span>
+        </button>
+      </li>
+    </ul>
   </header>
 
   <main class="main">
@@ -46,11 +53,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">De‑Fato</h1>
+        <h1 class="mb-2 mb-lg-0" data-i18n="defato-title">De‑Fato</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">De‑Fato</li>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li class="current" data-i18n="defato-title">De‑Fato</li>
           </ol>
         </nav>
       </div>
@@ -86,18 +93,18 @@
           <!-- Project Info & Description -->
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
+              <h3 data-i18n="project-info">Project information</h3>
               <ul>
-                <li><strong>Name:</strong> De‑Fato</li>
-                <li><strong>Category:</strong> Mobile App / React Native / Firebase</li>
-                <li><strong>Date:</strong> July 13, 2025</li>
-                <li><strong>Description:</strong> Mobile app for news curation and editing with authentication, database, and UI in React Native.</li>
-                <li><strong>GitHub:</strong> <a target="_blank" href="https://github.com/Davi7071/De-Fato">github.com/Davi7071/De-Fato</a></li>
+                <li><strong data-i18n="name">Name:</strong> <span data-i18n="defato-title">De‑Fato</span></li>
+                <li><strong data-i18n="category">Category:</strong> <span data-i18n="category-value">Mobile App / React Native / Firebase</span></li>
+                <li><strong data-i18n="date">Date:</strong> <span data-i18n="date-value">July 13, 2025</span></li>
+                <li><strong data-i18n="description">Description:</strong> <span data-i18n="description-value">Mobile app for news curation and editing with authentication, database, and UI in React Native.</span></li>
+                <li><strong data-i18n="github">GitHub:</strong> <a target="_blank" href="https://github.com/Davi7071/De-Fato">github.com/Davi7071/De-Fato</a></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>About De‑Fato</h2>
-              <p>
+              <h2 data-i18n="about-defato">About De‑Fato</h2>
+              <p data-i18n="about-defato-desc">
                 De‑Fato is a cross-platform app developed with Expo and React Native 
                 that allows users to authenticate via Firebase, view and edit news articles through an intuitive interface. 
                 It also features an AI-powered news checker that helps identify misinformation and ensures the quality of curated content. 
@@ -113,15 +120,24 @@
     <!-- /Portfolio Details Section -->
   </main>
 
+  <br><br><br><br>
   <footer id="footer" class="footer position-relative light-background">
+
     <div class="container">
-      <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">De‑Fato</strong> All Rights Reserved</p>
+      <div class="copyright text-center ">
+        <p>© <span data-i18n="copyright">Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span data-i18n="all-rights">All Rights Reserved</span>
+        </p>
       </div>
-      <div class="credits text-center">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <a href="https://bootstrapmade.com/" data-i18n="designed-by">BootstrapMade</a>BootstrapMade
       </div>
     </div>
+
   </footer>
 
   <!-- Scroll Top -->
@@ -138,6 +154,69 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  (function() {
+    const i18nTranslations = {
+      en: {
+        "lang-switch": "PT/EN",
+        home: "Home",
+        "defato-title": "De‑Fato",
+        "project-info": "Project information",
+        name: "Name:",
+        category: "Category:",
+        "category-value": "Mobile App / React Native / Firebase",
+        date: "Date:",
+        "date-value": "July 13, 2025",
+        description: "Description:",
+        "description-value": "Mobile app for news curation and editing with authentication, database, and UI in React Native.",
+        github: "GitHub:",
+        "about-defato": "About De‑Fato",
+        "about-defato-desc": "De‑Fato is a cross-platform app developed with Expo and React Native that allows users to authenticate via Firebase, view and edit news articles through an intuitive interface. It also features an AI-powered news checker that helps identify misinformation and ensures the quality of curated content. Additionally, the app includes an intelligent algorithm that receives a JSON file with the top news of the week and displays a dynamic relevance bar that fills in real-time as the journalist writes a new article, indicating how relevant it is likely to be.",
+        copyright: "Copyright",
+        "all-rights": "All Rights Reserved",
+        "designed-by": "Designed by"
+      },
+      pt: {
+        "lang-switch": "PT/EN",
+        home: "Início",
+        "defato-title": "De‑Fato",
+        "project-info": "Informações do projeto",
+        name: "Nome:",
+        category: "Categoria:",
+        "category-value": "App Mobile / React Native / Firebase",
+        date: "Data:",
+        "date-value": "13 de julho de 2025",
+        description: "Descrição:",
+        "description-value": "Aplicativo móvel para curadoria e edição de notícias com autenticação, banco de dados e interface em React Native.",
+        github: "GitHub:",
+        "about-defato": "Sobre o De‑Fato",
+        "about-defato-desc": "De‑Fato é um app multiplataforma desenvolvido com Expo e React Native que permite autenticação via Firebase, visualização e edição de notícias por uma interface intuitiva. Conta também com verificador de notícias por IA, que ajuda a identificar desinformação e garante a qualidade do conteúdo curado. Além disso, o app possui um algoritmo inteligente que recebe um arquivo JSON com as principais notícias da semana e exibe uma barra de relevância dinâmica que se preenche em tempo real conforme o jornalista escreve uma nova matéria, indicando o quão relevante ela tende a ser.",
+        copyright: "Copyright",
+        "all-rights": "Todos os direitos reservados",
+        "designed-by": "Desenvolvido por"
+      }
+    };
+
+    let lang = 'pt';
+
+    function updateLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (i18nTranslations[lang][key]) {
+          el.innerHTML = i18nTranslations[lang][key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateLanguage(lang);
+      document.getElementById("lang-switch").addEventListener("click", () => {
+        lang = lang === 'en' ? 'pt' : 'en';
+        updateLanguage(lang);
+      });
+    });
+  })();
+  </script>
 </body>
 
 </html>

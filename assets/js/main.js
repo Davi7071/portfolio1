@@ -227,3 +227,54 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+  const translations = {
+    en: {
+      home: "Home",
+      about: "About",
+      "about-text": "I'm a programming enthusiast dedicated to learning...",
+      portfolio: "Portfolio",
+      contact: "Contact",
+      skills: "Skills",
+      "degree": "Bachelor’s degree in Computer Science (in progress)",
+      "email": "Email",
+      "city": "City",
+      "age": "Age",
+      // Adicione outros conforme necessário
+    },
+    pt: {
+      home: "Início",
+      about: "Sobre",
+      "about-text": "Sou um entusiasta da programação dedicado a aprender...",
+      portfolio: "Portfólio",
+      contact: "Contato",
+      skills: "Habilidades",
+      "degree": "Bacharelado em Ciência da Computação (em andamento)",
+      "email": "Email",
+      "city": "Cidade",
+      "age": "Idade",
+      // Adicione outros conforme necessário
+    }
+  };
+
+  let currentLang = 'en';
+
+  function updateLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+  }
+
+  document.getElementById("lang-switch").addEventListener("click", () => {
+    currentLang = currentLang === 'en' ? 'pt' : 'en';
+    updateLanguage(currentLang);
+  });
+
+  // Inicializa com inglês
+  document.addEventListener("DOMContentLoaded", () => {
+    updateLanguage(currentLang);
+  });

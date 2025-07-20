@@ -36,16 +36,23 @@
       <a target="_blank" href="https://github.com/Davi7071" class="github"><i class="bi bi-github"></i></a>
       <a target="_blank" href="https://www.linkedin.com/in/davi-falabella-oliveira-89b4442b9/" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
+    <ul style="list-style:none; padding:0; margin-top:10px;">
+      <li>
+        <button id="lang-switch" class="btn btn-sm btn-outline-light">
+          <i class="bi bi-translate"></i> <span data-i18n="lang-switch">PT/EN</span>
+        </button>
+      </li>
+    </ul>
   </header>
 
   <main class="main">
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Website and Admin Panel</h1>
+        <h1 class="mb-2 mb-lg-0" data-i18n="admin-title">Website and Admin Panel</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Website and Admin Panel</li>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li class="current" data-i18n="admin-title">Website and Admin Panel</li>
           </ol>
         </nav>
       </div>
@@ -76,18 +83,18 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
+              <h3 data-i18n="project-info">Project information</h3>
               <ul>
-                <li><strong>Project Name</strong>: Website and Admin Panel</li>
-                <li><strong>Category</strong>: Web Development / PHP</li>
-                <li><strong>Project date</strong>: 01 July, 2025</li>
-                <li><strong>Description</strong>: A responsive website with an integrated admin panel for managing content.</li>
-                <li><strong>GitHub</strong>: <a target="_blank" href="https://github.com/Davi7071/Site-e-painel-de-controle">Repository Link</a></li>
+                <li><strong data-i18n="project-name">Project Name</strong>: <span data-i18n="admin-title">Website and Admin Panel</span></li>
+                <li><strong data-i18n="category">Category</strong>: <span data-i18n="category-value">Web Development / PHP</span></li>
+                <li><strong data-i18n="project-date">Project date</strong>: <span data-i18n="date-value">01 July, 2025</span></li>
+                <li><strong data-i18n="description">Description</strong>: <span data-i18n="description-value">A responsive website with an integrated admin panel for managing content.</span></li>
+                <li><strong data-i18n="github">GitHub</strong>: <a target="_blank" href="https://github.com/Davi7071/Site-e-painel-de-controle" data-i18n="github-value">Repository Link</a></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>About the project</h2>
-              <p>
+              <h2 data-i18n="about-admin">About the project</h2>
+              <p data-i18n="about-admin-desc">
                 This project includes a fully responsive website for public display and a separate PHP-based admin panel 
                 for managing content such as posts or users. The frontend is built using Bootstrap and HTML5, while the backend
                 uses PHP to handle basic CRUD operations. It features a login interface, a deletion module, and a layout 
@@ -101,10 +108,10 @@
   <footer id="footer" class="footer position-relative light-background">
     <div class="container">
       <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+        <p>© <span data-i18n="copyright">Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span data-i18n="all-rights">All Rights Reserved</span></p>
       </div>
       <div class="credits text-center">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <a href="https://bootstrapmade.com/" data-i18n="designed-by">BootstrapMade</a>BootstrapMade
       </div>
     </div>
   </footer>
@@ -118,6 +125,70 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+  (function() {
+    const i18nTranslations = {
+      en: {
+        "lang-switch": "PT/EN",
+        home: "Home",
+        "admin-title": "Website and Admin Panel",
+        "project-info": "Project information",
+        "project-name": "Project Name",
+        category: "Category",
+        "category-value": "Web Development / PHP",
+        "project-date": "Project date",
+        "date-value": "01 July, 2025",
+        description: "Description",
+        "description-value": "A responsive website with an integrated admin panel for managing content.",
+        github: "GitHub",
+        "github-value": "Repository Link",
+        "about-admin": "About the project",
+        "about-admin-desc": "This project includes a fully responsive website for public display and a separate PHP-based admin panel for managing content such as posts or users. The frontend is built using Bootstrap and HTML5, while the backend uses PHP to handle basic CRUD operations. It features a login interface, a deletion module, and a layout designed to be extended easily for various purposes, such as blogging, dashboards, or content control systems.",
+        copyright: "Copyright",
+        "all-rights": "All Rights Reserved",
+        "designed-by": "Designed by"
+      },
+      pt: {
+        "lang-switch": "PT/EN",
+        home: "Início",
+        "admin-title": "Site e Painel Admin",
+        "project-info": "Informações do projeto",
+        "project-name": "Nome do Projeto",
+        category: "Categoria",
+        "category-value": "Desenvolvimento Web / PHP",
+        "project-date": "Data do projeto",
+        "date-value": "01 de julho de 2025",
+        description: "Descrição",
+        "description-value": "Site responsivo com painel administrativo integrado para gerenciamento de conteúdo.",
+        github: "GitHub",
+        "github-value": "Link do Repositório",
+        "about-admin": "Sobre o projeto",
+        "about-admin-desc": "Este projeto inclui um site totalmente responsivo para exibição pública e um painel admin em PHP para gerenciar conteúdos como posts ou usuários. O frontend utiliza Bootstrap e HTML5, enquanto o backend usa PHP para operações CRUD básicas. Possui interface de login, módulo de exclusão e layout pensado para ser facilmente expandido para blog, dashboard ou sistemas de controle de conteúdo.",
+        copyright: "Copyright",
+        "all-rights": "Todos os direitos reservados",
+        "designed-by": "Desenvolvido por"
+      }
+    };
 
+    let lang = 'en';
+
+    function updateLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (i18nTranslations[lang][key]) {
+          el.innerHTML = i18nTranslations[lang][key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateLanguage(lang);
+      document.getElementById("lang-switch").addEventListener("click", () => {
+        lang = lang === 'en' ? 'pt' : 'en';
+        updateLanguage(lang);
+      });
+    });
+  })();
+  </script>
 </body>
 </html>

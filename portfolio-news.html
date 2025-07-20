@@ -50,6 +50,13 @@
       <a target="_blank" href="https://www.linkedin.com/in/davi-falabella-oliveira-89b4442b9/" class="linkedin"><i
           class="bi bi-linkedin"></i></a>
     </div>
+    <ul style="list-style:none; padding:0; margin-top:10px;">
+      <li>
+        <button id="lang-switch" class="btn btn-sm btn-outline-light">
+          <i class="bi bi-translate"></i> <span data-i18n="lang-switch">PT/EN</span>
+        </button>
+      </li>
+    </ul>
 
   </header>
 
@@ -58,11 +65,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">BigData News Analysis</h1>
+        <h1 class="mb-2 mb-lg-0" data-i18n="news-title">BigData News Analysis</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">BigData News Analysis</li>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li class="current" data-i18n="news-title">BigData News Analysis</li>
           </ol>
         </nav>
       </div>
@@ -101,20 +108,19 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
+              <h3 data-i18n="project-info">Project information</h3>
               <ul>
-                <li><strong>Project Name</strong>: BigData News Analysis</li>
-                <li><strong>Category</strong>: Big Data / PySpark</li>
-                <li><strong>Project date</strong>: 18 June, 2025</li>
-                <li><strong>Description</strong>: Large-scale news analysis using Python, PySpark, and visualizations.
-                </li>
-                <li><strong>GitHub</strong>: <a target="_blank"
-                    href="https://github.com/Davi7071/BigData-News-Analysis">BigData-News-Analysis</a></li>
+                <li><strong data-i18n="project-name">Project Name</strong>: <span data-i18n="news-title">BigData News Analysis</span></li>
+                <li><strong data-i18n="category">Category</strong>: <span data-i18n="category-value">Big Data / PySpark</span></li>
+                <li><strong data-i18n="project-date">Project date</strong>: <span data-i18n="date-value">18 June, 2025</span></li>
+                <li><strong data-i18n="description">Description</strong>: <span data-i18n="description-value">Large-scale news analysis using Python, PySpark, and visualizations.</span></li>
+                <li><strong data-i18n="github">GitHub</strong>: <a target="_blank"
+                    href="https://github.com/Davi7071/BigData-News-Analysis" data-i18n="github-value">BigData-News-Analysis</a></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>BigData News Analysis</h2>
-              <p>
+              <h2 data-i18n="news-title">BigData News Analysis</h2>
+              <p data-i18n="news-desc">
                 The BigData News Analysis project is a scalable data analytics solution designed to extract and
                 interpret trends in news content using modern
                 technologies such as Python, PySpark, and interactive visualizations. <br>It automates the collection of
@@ -136,11 +142,11 @@
   <footer id="footer" class="footer position-relative light-background">
     <div class="container">
       <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio </strong> <span>All Rights Reserved</span>
+        <p>© <span data-i18n="copyright">Copyright</span> <strong class="px-1 sitename">iPortfolio </strong> <span data-i18n="all-rights">All Rights Reserved</span>
         </p>
       </div>
       <div class="credits text-center">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <a href="https://bootstrapmade.com/" data-i18n="designed-by">BootstrapMade</a>BootstrapMade
       </div>
     </div>
   </footer>
@@ -166,7 +172,69 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  (function() {
+    const i18nTranslations = {
+      en: {
+        "lang-switch": "PT/EN",
+        home: "Home",
+        "news-title": "BigData News Analysis",
+        "project-info": "Project information",
+        "project-name": "Project Name",
+        category: "Category",
+        "category-value": "Big Data / PySpark",
+        "project-date": "Project date",
+        "date-value": "18 June, 2025",
+        description: "Description",
+        "description-value": "Large-scale news analysis using Python, PySpark, and visualizations.",
+        github: "GitHub",
+        "github-value": "BigData-News-Analysis",
+        "news-desc": "The BigData News Analysis project is a scalable data analytics solution designed to extract and interpret trends in news content using modern technologies such as Python, PySpark, and interactive visualizations. <br>It automates the collection of article headlines from multiple news websites, validates the accessibility of each source, and processes the text in a distributed environment. After performing text cleaning and normalization, the system efficiently counts the most frequent words and presents the results through a word cloud and bar chart. Additionally, the project exports the results in JSON format, enabling seamless integration with external dashboards and providing a clear, up-to-date overview of the most discussed topics in the media.",
+        copyright: "Copyright",
+        "all-rights": "All Rights Reserved",
+        "designed-by": "Designed by"
+      },
+      pt: {
+        "lang-switch": "PT/EN",
+        home: "Início",
+        "news-title": "Análise de Notícias com BigData",
+        "project-info": "Informações do projeto",
+        "project-name": "Nome do Projeto",
+        category: "Categoria",
+        "category-value": "Big Data / PySpark",
+        "project-date": "Data do projeto",
+        "date-value": "18 de junho de 2025",
+        description: "Descrição",
+        "description-value": "Análise de notícias em larga escala usando Python, PySpark e visualizações.",
+        github: "GitHub",
+        "github-value": "BigData-News-Analysis",
+        "news-desc": "O projeto BigData News Analysis é uma solução escalável de análise de dados projetada para extrair e interpretar tendências em conteúdos jornalísticos usando tecnologias modernas como Python, PySpark e visualizações interativas. <br>Ele automatiza a coleta de manchetes de artigos de diversos sites de notícias, valida a acessibilidade de cada fonte e processa os textos em ambiente distribuído. Após limpeza e normalização dos textos, o sistema conta as palavras mais frequentes e apresenta os resultados em nuvem de palavras e gráfico de barras. Além disso, exporta os resultados em JSON, permitindo integração com dashboards externos e fornecendo uma visão clara e atualizada dos temas mais discutidos na mídia.",
+        copyright: "Copyright",
+        "all-rights": "Todos os direitos reservados",
+        "designed-by": "Desenvolvido por"
+      }
+    };
 
+    let lang = 'en';
+
+    function updateLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (i18nTranslations[lang][key]) {
+          el.innerHTML = i18nTranslations[lang][key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateLanguage(lang);
+      document.getElementById("lang-switch").addEventListener("click", () => {
+        lang = lang === 'en' ? 'pt' : 'en';
+        updateLanguage(lang);
+      });
+    });
+  })();
+  </script>
 </body>
 
 </html>

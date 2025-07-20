@@ -39,8 +39,7 @@
 <body class="portfolio-details-page">
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+    <br><br><br><a href="index.html" class="logo d-flex align-items-center justify-content-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Davi Falabella</h1>
@@ -50,6 +49,13 @@
       <a target="_blank" href="https://github.com/Davi7071" class="github"><i class="bi bi-github"></i></a>
       <a target="_blank" href="https://www.linkedin.com/in/davi-falabella-oliveira-89b4442b9/" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
+    <ul style="list-style:none; padding:0; margin-top:10px;">
+      <li>
+        <button id="lang-switch" class="btn btn-sm btn-outline-light">
+          <i class="bi bi-translate"></i> <span data-i18n="lang-switch">PT/EN</span>
+        </button>
+      </li>
+    </ul>
 
   </header>
 
@@ -58,11 +64,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <h1 class="mb-2 mb-lg-0" data-i18n="iot-title">Portfolio Details</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li><a href="index.html" data-i18n="home">Home</a></li>
+            <li class="current" data-i18n="iot-title">Portfolio Details</li>
           </ol>
         </nav>
       </div>
@@ -107,18 +113,18 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
+              <h3 data-i18n="project-info">Project information</h3>
               <ul>
-                <li><strong>Category</strong>: IoT Device</li>
-                <li><strong>Project date</strong>: 18 june, 2025</li>
-                <li><strong>Project URL</strong>: <a target="_blank" href="https://wokwi.com/projects/431515491564407809">IoT Sound‑Activated Feedback </a></li>
-                <li><strong>GitHub</strong>: <a target="_blank" href="https://github.com/Davi7071/IoT-Sound-Responder">IoT-Sound-Responder</a></li>
-                <li><strong>Tecs</strong>: C++</li>
+                <li><strong data-i18n="category">Category</strong>: <span data-i18n="category-value">IoT Device</span></li>
+                <li><strong data-i18n="project-date">Project date</strong>: <span data-i18n="date-value">18 june, 2025</span></li>
+                <li><strong data-i18n="project-url">Project URL</strong>: <a target="_blank" href="https://wokwi.com/projects/431515491564407809" data-i18n="project-url-value">IoT Sound‑Activated Feedback </a></li>
+                <li><strong data-i18n="github">GitHub</strong>: <a target="_blank" href="https://github.com/Davi7071/IoT-Sound-Responder" data-i18n="github-value">IoT-Sound-Responder</a></li>
+                <li><strong data-i18n="tecs">Tecs</strong>: <span data-i18n="tecs-value">C++</span></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>IoT Sound‑Activated Feedback Device</h2>
-              <p>
+              <h2 data-i18n="iot-device-title">IoT Sound‑Activated Feedback Device</h2>
+              <p data-i18n="iot-device-desc">
                 The IoT Sound‑Activated Feedback Device is an interactive project that uses an ESP32 
                 to respond to specific sounds configured via a mobile app built with React Native. When the defined sound is detected (such as a clap or whistle), the device activates a servo motor, lights up an LED, and triggers a buzzer—providing tactile, visual, and auditory feedback. 
                 Compact and versatile, this system is perfect for home automation prototypes, accessibility tools, or smart toys.
@@ -137,14 +143,14 @@
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+        <p>© <span data-i18n="copyright">Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span data-i18n="all-rights">All Rights Reserved</span></p>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <a href="https://bootstrapmade.com/" data-i18n="designed-by">BootstrapMade</a>BootstrapMade
       </div>
     </div>
 
@@ -170,6 +176,73 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  (function() {
+    const i18nTranslations = {
+      en: {
+        "lang-switch": "PT/EN",
+        home: "Home",
+        "iot-title": "Portfolio Details",
+        "project-info": "Project information",
+        category: "Category",
+        "category-value": "IoT Device",
+        "project-date": "Project date",
+        "date-value": "18 june, 2025",
+        "project-url": "Project URL",
+        "project-url-value": "IoT Sound‑Activated Feedback ",
+        github: "GitHub",
+        "github-value": "IoT-Sound-Responder",
+        tecs: "Tecs",
+        "tecs-value": "C++",
+        "iot-device-title": "IoT Sound‑Activated Feedback Device",
+        "iot-device-desc": "The IoT Sound‑Activated Feedback Device is an interactive project that uses an ESP32 to respond to specific sounds configured via a mobile app built with React Native. When the defined sound is detected (such as a clap or whistle), the device activates a servo motor, lights up an LED, and triggers a buzzer—providing tactile, visual, and auditory feedback. Compact and versatile, this system is perfect for home automation prototypes, accessibility tools, or smart toys.",
+        copyright: "Copyright",
+        "all-rights": "All Rights Reserved",
+        "designed-by": "Designed by"
+      },
+      pt: {
+        "lang-switch": "PT/EN",
+        home: "Início",
+        "iot-title": "Detalhes do Portfólio",
+        "project-info": "Informações do projeto",
+        category: "Categoria",
+        "category-value": "Dispositivo IoT",
+        "project-date": "Data do projeto",
+        "date-value": "18 de junho de 2025",
+        "project-url": "URL do projeto",
+        "project-url-value": "Dispositivo IoT de Feedback por Som",
+        github: "GitHub",
+        "github-value": "IoT-Sound-Responder",
+        tecs: "Tecnologias",
+        "tecs-value": "C++",
+        "iot-device-title": "Dispositivo IoT de Feedback por Som",
+        "iot-device-desc": "O Dispositivo IoT de Feedback por Som é um projeto interativo que utiliza um ESP32 para responder a sons específicos configurados por um app mobile feito em React Native. Quando o som definido é detectado (como palmas ou assobio), o dispositivo aciona um servo motor, acende um LED e dispara um buzzer — fornecendo feedback tátil, visual e auditivo. Compacto e versátil, é perfeito para protótipos de automação residencial, ferramentas de acessibilidade ou brinquedos inteligentes.",
+        copyright: "Copyright",
+        "all-rights": "Todos os direitos reservados",
+        "designed-by": "Desenvolvido por"
+      }
+    };
+
+    let lang = 'en';
+
+    function updateLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (i18nTranslations[lang][key]) {
+          el.innerHTML = i18nTranslations[lang][key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateLanguage(lang);
+      document.getElementById("lang-switch").addEventListener("click", () => {
+        lang = lang === 'en' ? 'pt' : 'en';
+        updateLanguage(lang);
+      });
+    });
+  })();
+  </script>
 
 </body>
 

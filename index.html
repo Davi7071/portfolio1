@@ -64,10 +64,16 @@
     <br>
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="#hero" class="active" data-i18n="home"><i class="bi bi-house navicon"></i><span data-i18n="home">Home</span></a></li>
+        <li><a href="#about" data-i18n="about"><i class="bi bi-person navicon"></i> <span data-i18n="about">About</span></a></li>
+        <li><a href="#portfolio" data-i18n="portfolio"><i class="bi bi-images navicon"></i> <span data-i18n="portfolio">Portfolio</span></a></li>
+        <li><a href="#contact" data-i18n="contact"><i class="bi bi-envelope navicon"></i> <span data-i18n="contact">Contact</span></a></li>
+        <li>
+  <button id="lang-switch" class="btn btn-sm btn-outline-light" style="margin-left: 10px;">
+    <i class="bi bi-translate"></i> <span data-i18n="lang-switch">PT/EN</span>
+  </button>
+</li>
+
       </ul>
     </nav>
 
@@ -94,8 +100,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>I'm a programming enthusiast dedicated to learning and contributing to challenging projects. With a solid
+        <h2 data-i18n="about">About</h2>
+        <p data-i18n="about-text">I'm a programming enthusiast dedicated to learning and contributing to challenging projects. With a solid
           foundation in
           software development and a passion for problem-solving, I'm eager to grow as a professional in the tech world.
         </p>
@@ -108,8 +114,8 @@
             <img src="assets/img/image.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 content">
-            <h2>Full Stack Developer</h2>
-            <p class="fst-italic py-3">
+            <h2 data-i18n="fullstack-title">Full Stack Developer</h2>
+            <p class="fst-italic py-3" data-i18n="fullstack-desc">
               Passionate about full stack development, I'm currently focused on building efficient, responsive, and
               user-friendly web applications.
               I'm constantly exploring new technologies and improving my skills through personal and academic projects.
@@ -117,15 +123,15 @@
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Belo Horizonte, BR</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>20</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="city">City:</strong> <span data-i18n="city-value">Belo Horizonte, BR</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="age">Age:</strong> <span data-i18n="age-value">20</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor’s degree in Computer
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="degree">Degree:</strong> <span data-i18n="degree-value">Bachelor’s degree in Computer
                       Science (in progress)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>davifalabela@gmail.com</span>
+                  <li><i class="bi bi-chevron-right"></i> <strong data-i18n="email">Email:</strong> <span data-i18n="email-value">davifalabela@gmail.com</span>
                   </li>
                 </ul>
               </div>
@@ -141,64 +147,64 @@
     <section id="skills" class="skills section light-background">
 
       <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
+        <h2 data-i18n="skills">Skills</h2>
       </div><!-- End Section Title -->
       <div class="tech-container">
         <div class="tech">
           <i class="fa-brands fa-html5" style="font-size: 1.5em;"></i>
-          <div class="tooltip">HTML5</div>
+          <div class="tooltip" data-i18n="html5">HTML5</div>
         </div>
         <div class="tech">
           <i class="fa-brands fa-css3-alt" style="font-size: 1.5em;"></i>
-          <div class="tooltip">CSS3</div>
+          <div class="tooltip" data-i18n="css3">CSS3</div>
         </div>
         <div class="tech">
           <i class="fa-brands fa-js" style="font-size: 1.5em;"></i>
-          <div class="tooltip">JavaScript</div>
+          <div class="tooltip" data-i18n="javascript">JavaScript</div>
         </div>
         <div class="tech">
           <i class="fa-brands fa-bootstrap" style="font-size: 1.5em;"></i>
-          <div class="tooltip">Bootstrap</div>
+          <div class="tooltip" data-i18n="bootstrap">Bootstrap</div>
         </div>
         <div class="tech">
           <i class="fa-brands fa-php" style="font-size: 1.5em;"></i>
-          <div class="tooltip">PHP</div>
+          <div class="tooltip" data-i18n="php">PHP</div>
         </div>
         <div class="tech">
           <i class="fa-solid fa-database" style="font-size: 1.5em;"></i>
-          <div class="tooltip">Sql</div>
+          <div class="tooltip" data-i18n="sql">Sql</div>
         </div>
         <div class="tech">
           <i class="fa-brands fa-windows" style="font-size: 1.5em;"></i>
-          <div class="tooltip">Windows</div>
+          <div class="tooltip" data-i18n="windows">Windows</div>
         </div>
         <div class="tech">
           <i class="fa-brands fa-wordpress" style="font-size: 1.5em;"></i>
-          <div class="tooltip">WordPress</div>
+          <div class="tooltip" data-i18n="wordpress">WordPress</div>
         </div>
         <div class="tech">
           <i class="fa-brands fa-python" style="font-size: 1.5em;"></i>
-          <div class="tooltip">Python</div>
+          <div class="tooltip" data-i18n="python">Python</div>
         </div>
 
         <div class="tech">
           <i class="fa-brands fa-github" style="font-size: 1.5em;"></i>
-          <div class="tooltip">GitHub</div>
+          <div class="tooltip" data-i18n="github">GitHub</div>
         </div>
 
         <div class="tech">
           <i class="fa-brands fa-java" style="font-size: 1.5em;"></i>
-          <div class="tooltip">Java</div>
+          <div class="tooltip" data-i18n="java">Java</div>
         </div>
 
         <div class="tech">
           <i class="fa-solid fa-c" style="font-size: 1.5em;"></i>
-          <div class="tooltip">C++</div>
+          <div class="tooltip" data-i18n="cpp">C++</div>
         </div>
 
         <div class="tech">
           <i class="fa-brands fa-react" style="font-size: 1.5em;"></i>
-          <div class="tooltip">React</div>
+          <div class="tooltip" data-i18n="react">React</div>
           <br><br>
         </div>
 
@@ -213,8 +219,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Explore some of the projects I've developed in mobile apps, IoT devices, intelligent systems, and websites. Each project showcases my experience with modern technologies such as Firebase, React Native, artificial intelligence, and large-scale data analysis.
+        <h2 data-i18n="portfolio">Portfolio</h2>
+        <p data-i18n="portfolio-desc">Explore some of the projects I've developed in mobile apps, IoT devices, intelligent systems, and websites. Each project showcases my experience with modern technologies such as Firebase, React Native, artificial intelligence, and large-scale data analysis.
         Check out more on my GitHub: <a target="_blank" href="https://github.com/Davi7071">Davi7071</a></p>
       </div><!-- End Section Title -->
 
@@ -223,11 +229,11 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Device</li>
-            <li data-filter=".filter-branding">System</li>
-            <li data-filter=".filter-books">Web Site</li>
+            <li data-filter="*" class="filter-active" data-i18n="filter-all">All</li>
+            <li data-filter=".filter-app" data-i18n="filter-app">App</li>
+            <li data-filter=".filter-product" data-i18n="filter-device">Device</li>
+            <li data-filter=".filter-branding" data-i18n="filter-system">System</li>
+            <li data-filter=".filter-books" data-i18n="filter-website">Web Site</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -236,8 +242,8 @@
               <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/app-1.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Device</h4>
-                  <p>IoT Sound‑Activated Feedback Device</p>
+                  <h4 data-i18n="device">Device</h4>
+                  <p data-i18n="iot-desc">IoT Sound‑Activated Feedback Device</p>
                   <a href="assets/img/portfolio/app-1.png" title="" data-gallery="portfolio-gallery-app"
                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a target="_blank" href="portfolio-iot.html" title="More Details" class="details-link"><i
@@ -250,8 +256,8 @@
               <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/news.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>System</h4>
-                  <p>BigData News Analysis</p>
+                  <h4 data-i18n="system">System</h4>
+                  <p data-i18n="bigdata-desc">BigData News Analysis</p>
                   <a href="assets/img/portfolio/news.png" title=""
                     data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
                       class="bi bi-zoom-in"></i></a>
@@ -265,8 +271,8 @@
               <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/app-de-fato.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>App</h4>
-                  <p>AI news app</p>
+                  <h4 data-i18n="app">App</h4>
+                  <p data-i18n="ai-news-desc">AI news app</p>
                   <a href="assets/img/portfolio/app-de-fato.jpg" title=""
                     data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
                       class="bi bi-zoom-in"></i></a>
@@ -280,8 +286,8 @@
               <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/painel.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>System</h4>
-                  <p>Website and Admin Panel</p>
+                  <h4 data-i18n="system">System</h4>
+                  <p data-i18n="website-admin-desc">Website and Admin Panel</p>
                   <a href="assets/img/portfolio/painel.png" title="Branding 1" data-gallery="portfolio-gallery-book"
                     class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a target="_blank" href="admin-panel.html" title="More Details" class="details-link"><i
@@ -302,16 +308,16 @@
 
     <!-- Section Title --> 
     <div id="contact" style="margin-top: 5%;" class="container section-title" data-aos="fade-up">
-      <h2>Contact</h2>
+      <h2 data-i18n="contact">Contact</h2>
             <div style="margin-top: 5%;" class="row">
               <div  class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong><i class="fa-solid fa-phone"></i></strong> <span>55 31 999514122</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong><i class="fa-solid fa-phone"></i></strong> <span data-i18n="phone">55 31 999514122</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong><i class="fa-solid fa-envelope"></i></strong> <span>davifalabela@gmail.com</span>
+                  <li><i class="bi bi-chevron-right"></i> <strong><i class="fa-solid fa-envelope"></i></strong> <span data-i18n="email-value">davifalabela@gmail.com</span>
                   </li>
                 </ul>
               </div>
@@ -320,20 +326,21 @@
 
 
   </main>
-
+  <br><br><br><br>
   <footer id="footer" class="footer position-relative light-background">
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span>
+        <p>© <span data-i18n="copyright">Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span data-i18n="all-rights">All Rights Reserved</span>
         </p>
       </div>
+      
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <a href="https://bootstrapmade.com/" data-i18n="designed-by">BootstrapMade</a>BootstrapMade
       </div>
     </div>
 
@@ -347,6 +354,7 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
+   
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -357,9 +365,139 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  
+
 
   <!-- Main JS File -->
+
+  
+
   <script src="assets/js/main.js"></script>
+<script>
+(function() {
+  const i18nTranslations = {
+    en: {
+      home: "Home",
+      about: "About",
+      "about-text": "I'm a programming enthusiast dedicated to learning and contributing to challenging projects. With a solid foundation in software development and a passion for problem-solving, I'm eager to grow as a professional in the tech world.",
+      portfolio: "Portfolio",
+      "portfolio-desc": "Explore some of the projects I've developed in mobile apps, IoT devices, intelligent systems, and websites. Each project showcases my experience with modern technologies such as Firebase, React Native, artificial intelligence, and large-scale data analysis. Check out more on my GitHub: <a target=\"_blank\" href=\"https://github.com/Davi7071\">Davi7071</a>",
+      contact: "Contact",
+      skills: "Skills",
+      degree: "Degree:",
+      "degree-value": "Bachelor’s degree in Computer Science (in progress)",
+      email: "Email:",
+      "email-value": "davifalabela@gmail.com",
+      city: "City:",
+      "city-value": "Belo Horizonte, BR",
+      age: "Age:",
+      "age-value": "20",
+      "lang-switch": "PT/EN",
+      "fullstack-title": "Full Stack Developer",
+      "fullstack-desc": "Passionate about full stack development, I'm currently focused on building efficient, responsive, and user-friendly web applications. I'm constantly exploring new technologies and improving my skills through personal and academic projects.",
+      html5: "HTML5",
+      css3: "CSS3",
+      javascript: "JavaScript",
+      bootstrap: "Bootstrap",
+      php: "PHP",
+      sql: "Sql",
+      windows: "Windows",
+      wordpress: "WordPress",
+      python: "Python",
+      github: "GitHub",
+      java: "Java",
+      cpp: "C++",
+      react: "React",
+      "filter-all": "All",
+      "filter-app": "App",
+      "filter-device": "Device",
+      "filter-system": "System",
+      "filter-website": "Web Site",
+      device: "Device",
+      "iot-desc": "IoT Sound‑Activated Feedback Device",
+      system: "System",
+      "bigdata-desc": "BigData News Analysis",
+      app: "App",
+      "ai-news-desc": "AI news app",
+      "website-admin-desc": "Website and Admin Panel",
+      phone: "55 31 999514122",
+      copyright: "Copyright",
+      "all-rights": "All Rights Reserved",
+      "designed-by": "Designed by"
+    },
+    pt: {
+      home: "Início",
+      about: "Sobre",
+      "about-text": "Sou um entusiasta da programação dedicado a aprender e contribuir com projetos desafiadores. Com uma base sólida em desenvolvimento de software e paixão por resolver problemas, busco crescer como profissional no mundo da tecnologia.",
+      portfolio: "Portfólio",
+      "portfolio-desc": "Explore alguns dos projetos que desenvolvi em aplicativos móveis, dispositivos IoT, sistemas inteligentes e sites. Cada projeto mostra minha experiência com tecnologias modernas como Firebase, React Native, inteligência artificial e análise de dados em larga escala. Veja mais no meu GitHub: <a target=\"_blank\" href=\"https://github.com/Davi7071\">Davi7071</a>",
+      contact: "Contato",
+      skills: "Habilidades",
+      degree: "Formação:",
+      "degree-value": "Bacharelado em Ciência da Computação (em andamento)",
+      email: "Email:",
+      "email-value": "davifalabela@gmail.com",
+      city: "Cidade:",
+      "city-value": "Belo Horizonte, BR",
+      age: "Idade:",
+      "age-value": "20",
+      "lang-switch": "PT/EN",
+      "fullstack-title": "Desenvolvedor Full Stack",
+      "fullstack-desc": "Apaixonado por desenvolvimento full stack, atualmente estou focado em construir aplicações web eficientes, responsivas e amigáveis ao usuário. Estou sempre explorando novas tecnologias e aprimorando minhas habilidades por meio de projetos pessoais e acadêmicos.",
+      html5: "HTML5",
+      css3: "CSS3",
+      javascript: "JavaScript",
+      bootstrap: "Bootstrap",
+      php: "PHP",
+      sql: "Sql",
+      windows: "Windows",
+      wordpress: "WordPress",
+      python: "Python",
+      github: "GitHub",
+      java: "Java",
+      cpp: "C++",
+      react: "React",
+      "filter-all": "Todos",
+      "filter-app": "App",
+      "filter-device": "Dispositivo",
+      "filter-system": "Sistema",
+      "filter-website": "Site",
+      device: "Dispositivo",
+      "iot-desc": "Dispositivo IoT de Feedback Ativado por Som",
+      system: "Sistema",
+      "bigdata-desc": "Análise de Notícias com BigData",
+      app: "App",
+      "ai-news-desc": "App de notícias com IA",
+      "website-admin-desc": "Site e Painel Admin",
+      phone: "55 31 999514122",
+      copyright: "Copyright",
+      "all-rights": "Todos os direitos reservados",
+      "designed-by": "Desenvolvido por"
+    }
+  };
+
+  let lang = 'en';
+
+  function updateLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (i18nTranslations[lang][key]) {
+        el.innerHTML = i18nTranslations[lang][key];
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateLanguage(lang);
+    document.getElementById("lang-switch").addEventListener("click", () => {
+      lang = lang === 'en' ? 'pt' : 'en';
+      updateLanguage(lang);
+    });
+  });
+})();
+</script>
+
+
 
 </body>
 
