@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title data-i18n="doc-title">Dispositivo IoT de Feedback por Som | Davi Falabella</title>
+  <meta name="description" content="Dispositivo IoT com ESP32 que reconhece um som configurado por um app React Native e responde com servo motor, LED e buzzer.">
+  <meta name="author" content="Davi Falabella">
+  <meta name="theme-color" content="#040b14">
+  <link rel="canonical" href="https://davi7071.github.io/portfolio1/portfolio-iot.html">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Davi Falabella">
+  <meta property="og:title" content="Dispositivo IoT de Feedback por Som | Davi Falabella">
+  <meta property="og:description" content="Dispositivo IoT com ESP32 que reconhece um som configurado por um app React Native e responde com servo motor, LED e buzzer.">
+  <meta property="og:url" content="https://davi7071.github.io/portfolio1/portfolio-iot.html">
+  <meta property="og:image" content="https://davi7071.github.io/portfolio1/assets/img/portfolio/iot.jpg">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
-  <link href="assets/img/favcon.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="icon" type="image/png">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Poppins:wght@400;500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
@@ -37,25 +49,33 @@
 </head>
 
 <body class="portfolio-details-page">
+
   <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    <br><br><br><a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
+    <i class="header-toggle d-xl-none bi bi-list" role="button" tabindex="0" aria-controls="header" aria-expanded="false" aria-label="Abrir menu" data-i18n-aria="open-menu"></i>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center mt-5 pt-5">
       <h1 class="sitename">Davi Falabella</h1>
     </a>
 
-    <div class="social-links text-center">
-      <a target="_blank" href="https://github.com/Davi7071" class="github"><i class="bi bi-github"></i></a>
-      <a target="_blank" href="https://www.linkedin.com/in/davi-falabella-oliveira-89b4442b9/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    <div class="social-links text-center mt-4">
+      <a href="https://github.com/Davi7071" class="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/davi-falabella-oliveira-89b4442b9/" class="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
     </div>
-    <ul style="list-style:none; padding:0; margin-top:10px;">
-      <li>
-        <button id="lang-switch" class="btn btn-sm btn-outline-light">
-          <i class="bi bi-translate"></i> <span data-i18n="lang-switch">PT/EN</span>
-        </button>
-      </li>
-    </ul>
+
+    <nav id="navmenu" class="navmenu mt-5 pt-4">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i><span data-i18n="home">Início</span></a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span data-i18n="about">Sobre</span></a></li>
+        <li><a href="index.html#skills"><i class="bi bi-code-slash navicon"></i><span data-i18n="skills">Habilidades</span></a></li>
+        <li><a href="index.html#portfolio" class="active"><i class="bi bi-images navicon"></i><span data-i18n="portfolio">Portfólio</span></a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span data-i18n="contact">Contato</span></a></li>
+        <li>
+          <button type="button" class="lang-switch btn btn-sm btn-outline-light ms-2" aria-label="Mudar idioma para inglês" data-i18n-aria="lang-switch-label">
+            <i class="bi bi-translate"></i> <span data-i18n="lang-switch">EN</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
 
   </header>
 
@@ -64,11 +84,12 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0" data-i18n="iot-title">Portfolio Details</h1>
-        <nav class="breadcrumbs">
+        <h1 class="mb-2 mb-lg-0" data-i18n="page-title">Dispositivo IoT de Feedback por Som</h1>
+        <nav class="breadcrumbs" aria-label="breadcrumb">
           <ol>
-            <li><a href="index.html" data-i18n="home">Home</a></li>
-            <li class="current" data-i18n="iot-title">Portfolio Details</li>
+            <li><a href="index.html" data-i18n="home">Início</a></li>
+            <li><a href="index.html#portfolio" data-i18n="portfolio">Portfólio</a></li>
+            <li class="current" data-i18n="page-title">Dispositivo IoT de Feedback por Som</li>
           </ol>
         </nav>
       </div>
@@ -88,24 +109,16 @@
                 {
                   "loop": true,
                   "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
+                  "autoplay": { "delay": 5000 },
                   "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
+                  "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
                 }
               </script>
 
               <div class="swiper-wrapper align-items-center">
-
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.png" alt="">
+                  <img src="assets/img/portfolio/iot.jpg" alt="Dispositivo IoT de Feedback por Som">
                 </div>
-
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -113,22 +126,18 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3 data-i18n="project-info">Project information</h3>
+              <h3 data-i18n="project-info">Informações do projeto</h3>
               <ul>
-                <li><strong data-i18n="category">Category</strong>: <span data-i18n="category-value">IoT Device</span></li>
-                <li><strong data-i18n="project-date">Project date</strong>: <span data-i18n="date-value">18 june, 2025</span></li>
-                <li><strong data-i18n="project-url">Project URL</strong>: <a target="_blank" href="https://wokwi.com/projects/431515491564407809" data-i18n="project-url-value">IoT Sound‑Activated Feedback </a></li>
-                <li><strong data-i18n="github">GitHub</strong>: <a target="_blank" href="https://github.com/Davi7071/IoT-Sound-Responder" data-i18n="github-value">IoT-Sound-Responder</a></li>
-                <li><strong data-i18n="tecs">Tecs</strong>: <span data-i18n="tecs-value">C++</span></li>
+                <li><strong data-i18n="category">Categoria</strong>: <span data-i18n="category-value">Dispositivo IoT</span></li>
+                <li><strong data-i18n="project-date">Data do projeto</strong>: <span data-i18n="date-value">18 de junho de 2025</span></li>
+                <li><strong data-i18n="tecs">Tecnologias</strong>: C++ · ESP32 · React Native</li>
+                <li><strong data-i18n="simulation">Simulação</strong>: <a href="https://wokwi.com/projects/431515491564407809" target="_blank" rel="noopener">Wokwi</a></li>
               </ul>
+              <a href="https://github.com/Davi7071/IoT-Sound-Responder" class="btn-project" target="_blank" rel="noopener"><i class="bi bi-github"></i> <span data-i18n="view-github">Ver no GitHub</span></a>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2 data-i18n="iot-device-title">IoT Sound‑Activated Feedback Device</h2>
-              <p data-i18n="iot-device-desc">
-                The IoT Sound‑Activated Feedback Device is an interactive project that uses an ESP32 
-                to respond to specific sounds configured via a mobile app built with React Native. When the defined sound is detected (such as a clap or whistle), the device activates a servo motor, lights up an LED, and triggers a buzzer—providing tactile, visual, and auditory feedback. 
-                Compact and versatile, this system is perfect for home automation prototypes, accessibility tools, or smart toys.
-              </p>
+              <h2 data-i18n="about-project">Sobre o projeto</h2>
+              <p data-i18n="project-desc">O Dispositivo IoT de Feedback por Som é um projeto interativo que utiliza um ESP32 para responder a sons específicos configurados por um app mobile feito em React Native. Quando o som definido é detectado (como palmas ou assobio), o dispositivo aciona um servo motor, acende um LED e dispara um buzzer — fornecendo feedback tátil, visual e auditivo. Compacto e versátil, é perfeito para protótipos de automação residencial, ferramentas de acessibilidade ou brinquedos inteligentes.</p>
             </div>
           </div>
 
@@ -137,112 +146,52 @@
       </div>
 
     </section><!-- /Portfolio Details Section -->
-      </main>
-<br><br><br><br><br><br><br><br>
+
+  </main>
+
   <footer id="footer" class="footer position-relative light-background">
 
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span data-i18n="copyright">Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span data-i18n="all-rights">All Rights Reserved</span></p>
+      <div class="copyright text-center">
+        <p>© <span class="current-year">2026</span> <strong class="px-1 sitename">Davi Falabella</strong> <span data-i18n="all-rights">Todos os direitos reservados</span></p>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        <a href="https://bootstrapmade.com/" data-i18n="designed-by">BootstrapMade</a>BootstrapMade
+        <span data-i18n="designed-by">Design por</span> <a href="https://bootstrapmade.com/" target="_blank" rel="noopener">BootstrapMade</a>
       </div>
     </div>
 
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Voltar ao topo" data-i18n-aria="back-to-top"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- Page translations (PT comes from the HTML) -->
   <script>
-  (function() {
-    const i18nTranslations = {
+    window.PAGE_I18N = {
       en: {
-        "lang-switch": "PT/EN",
-        home: "Home",
-        "iot-title": "Portfolio Details",
-        "project-info": "Project information",
-        category: "Category",
+        "doc-title": "IoT Sound-Activated Feedback Device | Davi Falabella",
+        "page-title": "IoT Sound-Activated Feedback Device",
         "category-value": "IoT Device",
-        "project-date": "Project date",
-        "date-value": "18 june, 2025",
-        "project-url": "Project URL",
-        "project-url-value": "IoT Sound‑Activated Feedback ",
-        github: "GitHub",
-        "github-value": "IoT-Sound-Responder",
-        tecs: "Tecs",
-        "tecs-value": "C++",
-        "iot-device-title": "IoT Sound‑Activated Feedback Device",
-        "iot-device-desc": "The IoT Sound‑Activated Feedback Device is an interactive project that uses an ESP32 to respond to specific sounds configured via a mobile app built with React Native. When the defined sound is detected (such as a clap or whistle), the device activates a servo motor, lights up an LED, and triggers a buzzer—providing tactile, visual, and auditory feedback. Compact and versatile, this system is perfect for home automation prototypes, accessibility tools, or smart toys.",
-        copyright: "Copyright",
-        "all-rights": "All Rights Reserved",
-        "designed-by": "Designed by"
-      },
-      pt: {
-        "lang-switch": "PT/EN",
-        home: "Início",
-        "iot-title": "Detalhes do Portfólio",
-        "project-info": "Informações do projeto",
-        category: "Categoria",
-        "category-value": "Dispositivo IoT",
-        "project-date": "Data do projeto",
-        "date-value": "18 de junho de 2025",
-        "project-url": "URL do projeto",
-        "project-url-value": "Dispositivo IoT de Feedback por Som",
-        github: "GitHub",
-        "github-value": "IoT-Sound-Responder",
-        tecs: "Tecnologias",
-        "tecs-value": "C++",
-        "iot-device-title": "Dispositivo IoT de Feedback por Som",
-        "iot-device-desc": "O Dispositivo IoT de Feedback por Som é um projeto interativo que utiliza um ESP32 para responder a sons específicos configurados por um app mobile feito em React Native. Quando o som definido é detectado (como palmas ou assobio), o dispositivo aciona um servo motor, acende um LED e dispara um buzzer — fornecendo feedback tátil, visual e auditivo. Compacto e versátil, é perfeito para protótipos de automação residencial, ferramentas de acessibilidade ou brinquedos inteligentes.",
-        copyright: "Copyright",
-        "all-rights": "Todos os direitos reservados",
-        "designed-by": "Desenvolvido por"
+        "date-value": "June 18, 2025",
+        simulation: "Simulation",
+        "project-desc": "The IoT Sound-Activated Feedback Device is an interactive project that uses an ESP32 to respond to specific sounds configured via a mobile app built with React Native. When the defined sound is detected (such as a clap or whistle), the device activates a servo motor, lights up an LED, and triggers a buzzer — providing tactile, visual, and auditory feedback. Compact and versatile, this system is perfect for home automation prototypes, accessibility tools, or smart toys."
       }
     };
-
-    let lang = 'en';
-
-    function updateLanguage(lang) {
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (i18nTranslations[lang][key]) {
-          el.innerHTML = i18nTranslations[lang][key];
-        }
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      updateLanguage(lang);
-      document.getElementById("lang-switch").addEventListener("click", () => {
-        lang = lang === 'en' ? 'pt' : 'en';
-        updateLanguage(lang);
-      });
-    });
-  })();
   </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS Files -->
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 

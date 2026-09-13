@@ -1279,41 +1279,9 @@ section,
   color: var(--accent-color);
 }
 
-.tech{
-  font-size: 200px;
-}
-
-.icon {
-  position: relative;
-  font-size: 60px;
-  color: black;
-  transition: transform 0.3s ease;
-}
-
-.icon:hover {
-  transform: scale(1.2);
-}
-
-.tooltip {
-  margin-top: 30px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: black;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-size: 14px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.icon:hover .tooltip {
-  opacity: 1;
-}
-
-
+/*--------------------------------------------------------------
+# Tech Skills (icons with tooltip)
+--------------------------------------------------------------*/
 .tech-container {
   display: flex;
   justify-content: center;
@@ -1328,29 +1296,100 @@ section,
   transition: transform 0.3s;
 }
 
-.tech:hover {
-  transition: 1s;
-  transform: scale(1.2);
-  color: #149DDD;
+.tech>i {
+  font-size: 1.5em;
 }
 
-.tooltip {
+.tech:hover,
+.tech:focus-visible {
+  transition: 1s;
+  transform: scale(1.2);
+  color: var(--accent-color);
+}
+
+.tech .tooltip {
   position: absolute;
-  top: 70px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #222;
-  color: #149DDD;
+  color: var(--accent-color);
   padding: 5px 10px;
   border-radius: 5px;
+  white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
   font-size: 0.9em;
 }
 
-.tech:hover .tooltip {
+.tech:hover .tooltip,
+.tech:focus-visible .tooltip {
   opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Custom Additions
+--------------------------------------------------------------*/
+/* Hero: plain prefix before the typed text */
+.hero p .hero-prefix {
+  border-bottom: 0;
+  letter-spacing: normal;
+}
+
+/* Contact: cards reuse the template info-item style */
+.contact .info-wrap .info-item {
+  margin-bottom: 0;
+  color: var(--default-color);
+}
+
+.contact .info-wrap .info-item p {
+  overflow-wrap: anywhere;
+}
+
+/* Project pages: keep the footer at the bottom */
+.portfolio-details-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.portfolio-details-page .main {
+  flex: 1;
+}
+
+/* Project pages: GitHub button in the template button style */
+.portfolio-details .btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  transition: 0.4s;
+}
+
+.portfolio-details .btn-project:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+/* Touch screens have no hover: keep project info and skill names visible */
+@media (hover: none) {
+  .portfolio .portfolio-content .portfolio-info {
+    opacity: 1;
+  }
+
+  .tech-container {
+    row-gap: 60px;
+    padding-bottom: 40px;
+  }
+
+  .tech .tooltip {
+    opacity: 1;
+  }
 }
 
 
