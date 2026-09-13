@@ -12,14 +12,25 @@
   /**
    * Header toggle
    */
+  const header = document.querySelector('#header');
   const headerToggleBtn = document.querySelector('.header-toggle');
 
   function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
+    header.classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
+    headerToggleBtn.setAttribute('aria-expanded', header.classList.contains('header-show'));
   }
-  headerToggleBtn.addEventListener('click', headerToggle);
+
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener('click', headerToggle);
+    headerToggleBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        headerToggle();
+      }
+    });
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -29,19 +40,6 @@
       if (document.querySelector('.header-show')) {
         headerToggle();
       }
-    });
-
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
     });
   });
 
@@ -58,20 +56,23 @@
   /**
    * Scroll top button
    */
-  let scrollTop = document.querySelector('.scroll-top');
+  const scrollTop = document.querySelector('.scroll-top');
 
   function toggleScrollTop() {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -80,6 +81,7 @@
    * Animation on scroll function and init
    */
   function aosInit() {
+    if (typeof AOS === 'undefined') return;
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -90,14 +92,19 @@
   window.addEventListener('load', aosInit);
 
   /**
-   * Init typed.js
+   * Init typed.js (strings follow the current language)
    */
   const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
+  let typed = null;
+
+  function initTyped(lang) {
+    if (!selectTyped || typeof Typed === 'undefined') return;
+    const items = selectTyped.getAttribute('data-typed-items-' + lang) || selectTyped.getAttribute('data-typed-items') || '';
+    if (typed) {
+      typed.destroy();
+    }
+    typed = new Typed(selectTyped, {
+      strings: items.split(',').map(item => item.trim()).filter(Boolean),
       loop: true,
       typeSpeed: 100,
       backSpeed: 50,
@@ -105,39 +112,47 @@
     });
   }
 
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
+  initTyped(window.i18n ? window.i18n.lang : 'pt');
+  document.addEventListener('i18n:change', (e) => initTyped(e.detail.lang));
 
   /**
-   * Animate the skills items on reveal
+   * Age calculated from the birth date
    */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
+  const ageElement = document.querySelector('#age');
+  if (ageElement) {
+    const birthDate = new Date(2005, 4, 25);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const birthdayPassed = today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+    if (!birthdayPassed) {
+      age--;
+    }
+    ageElement.textContent = age;
+  }
+
+  /**
+   * Current year in the footer
+   */
+  document.querySelectorAll('.current-year').forEach(el => {
+    el.textContent = new Date().getFullYear();
   });
 
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init isotope layout and filters
    */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    if (typeof Isotope === 'undefined' || typeof imagesLoaded === 'undefined') return;
+
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
@@ -156,13 +171,20 @@
       filters.addEventListener('click', function() {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
+        if (initIsotope) {
+          initIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
         }
+        aosInit();
       }, false);
+
+      filters.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
     });
 
   });
@@ -171,16 +193,19 @@
    * Init swiper sliders
    */
   function initSwiper() {
+    if (typeof Swiper === 'undefined') return;
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
+      // Loop and autoplay need at least two slides
+      if (swiperElement.querySelectorAll('.swiper-slide').length < 2) {
+        config.loop = false;
+        delete config.autoplay;
       }
+
+      new Swiper(swiperElement, config);
     });
   }
 
@@ -227,54 +252,3 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
-
-
-  const translations = {
-    en: {
-      home: "Home",
-      about: "About",
-      "about-text": "I'm a programming enthusiast dedicated to learning...",
-      portfolio: "Portfolio",
-      contact: "Contact",
-      skills: "Skills",
-      "degree": "Bachelor’s degree in Computer Science (in progress)",
-      "email": "Email",
-      "city": "City",
-      "age": "Age",
-      // Adicione outros conforme necessário
-    },
-    pt: {
-      home: "Início",
-      about: "Sobre",
-      "about-text": "Sou um entusiasta da programação dedicado a aprender...",
-      portfolio: "Portfólio",
-      contact: "Contato",
-      skills: "Habilidades",
-      "degree": "Bacharelado em Ciência da Computação (em andamento)",
-      "email": "Email",
-      "city": "Cidade",
-      "age": "Idade",
-      // Adicione outros conforme necessário
-    }
-  };
-
-  let currentLang = 'en';
-
-  function updateLanguage(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (translations[lang][key]) {
-        el.innerHTML = translations[lang][key];
-      }
-    });
-  }
-
-  document.getElementById("lang-switch").addEventListener("click", () => {
-    currentLang = currentLang === 'en' ? 'pt' : 'en';
-    updateLanguage(currentLang);
-  });
-
-  // Inicializa com inglês
-  document.addEventListener("DOMContentLoaded", () => {
-    updateLanguage(currentLang);
-  });

@@ -1279,78 +1279,155 @@ section,
   color: var(--accent-color);
 }
 
-.tech{
-  font-size: 200px;
-}
-
-.icon {
-  position: relative;
-  font-size: 60px;
-  color: black;
-  transition: transform 0.3s ease;
-}
-
-.icon:hover {
-  transform: scale(1.2);
-}
-
-.tooltip {
-  margin-top: 30px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: black;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-size: 14px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.icon:hover .tooltip {
-  opacity: 1;
-}
-
-
+/*--------------------------------------------------------------
+# Tech Skills (icons with tooltip)
+--------------------------------------------------------------*/
 .tech-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 56px 30px;
+  padding: 0 15px;
 }
 
 .tech {
   position: relative;
-  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: black;
-  transition: transform 0.3s;
 }
 
-.tech:hover {
-  transition: 1s;
+.tech>i {
+  font-size: 72px;
+  line-height: 1;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.tech:hover>i,
+.tech:focus-visible>i {
   transform: scale(1.2);
-  color: #149DDD;
+  color: var(--accent-color);
+  transition: transform 1s, color 1s;
 }
 
-.tooltip {
+.tech .tech-name {
   position: absolute;
-  top: 70px;
+  top: calc(100% + 14px);
+  left: 50%;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 5px;
+  background-color: #222;
+  color: var(--accent-color);
+  font-family: var(--default-font);
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -4px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+/* Small arrow pointing to the icon */
+.tech .tech-name::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #222;
-  color: #149DDD;
-  padding: 5px 10px;
-  border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-  font-size: 0.9em;
+  border: 5px solid transparent;
+  border-bottom-color: #222;
 }
 
-.tech:hover .tooltip {
+.tech:hover .tech-name,
+.tech:focus-visible .tech-name {
   opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 575px) {
+  .tech-container {
+    column-gap: 22px;
+  }
+
+  .tech>i {
+    font-size: 56px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Custom Additions
+--------------------------------------------------------------*/
+/* Hero: plain prefix before the typed text */
+.hero p .hero-prefix {
+  border-bottom: 0;
+  letter-spacing: normal;
+}
+
+/* Contact: cards reuse the template info-item style */
+.contact .info-wrap .info-item {
+  margin-bottom: 0;
+  color: var(--default-color);
+}
+
+.contact .info-wrap .info-item p {
+  overflow-wrap: anywhere;
+}
+
+/* Project pages: keep the footer at the bottom */
+.portfolio-details-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.portfolio-details-page .main {
+  flex: 1;
+}
+
+/* Project pages: GitHub button in the template button style */
+.portfolio-details .btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  transition: 0.4s;
+}
+
+.portfolio-details .btn-project:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+/* Touch screens have no hover: keep project info and skill names visible */
+@media (hover: none) {
+  .portfolio .portfolio-content .portfolio-info {
+    opacity: 1;
+  }
+
+  .tech-container {
+    row-gap: 30px;
+  }
+
+  .tech .tech-name {
+    position: static;
+    margin-top: 8px;
+    padding: 0;
+    background: none;
+    color: var(--default-color);
+    opacity: 1;
+    transform: none;
+  }
+
+  .tech .tech-name::before {
+    display: none;
+  }
 }
 
 
